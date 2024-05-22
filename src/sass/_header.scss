@@ -1,0 +1,180 @@
+.header {
+    min-height: 750px;
+    @include bgc($primary-bg);
+    // border-radius: 0 0 200px 200px;
+    clip-path: ellipse(100% 100% at top);
+    &-container {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 15px;
+    }
+    &-top {
+        padding-top: 24px;
+        padding-bottom: 70px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &-main {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0 40px;
+    }
+    &-content {
+        width: 70%;
+    }
+    &-image {
+        max-width: 50%;
+    }
+    &-heading {
+        font-size: 50px;
+        font-weight: bold;
+        margin-bottom: 34px;
+        line-height: calc(81 / 50);
+        color: $primary-color;
+
+        span {
+            color: $text-secondary;
+        }
+    }
+    &-desc {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 52px;
+        color: $gray-darker;
+    }
+    // facenter
+    &-buttons {
+        margin-left: 80px;
+        display: flex;
+        align-items: center;
+        gap: 0 34px;
+    }
+    &-actions {
+        display: flex;
+        align-items: center;
+        gap: 0 40px;
+        .explore {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-direction: row-reverse;
+            justify-content: space-around;
+            .arrow-right {
+                background: url(../assets/images/arrow-right.svg);
+                @include size(24px);
+                background-repeat: no-repeat;
+                background-size: cover;
+                border: none;
+                transition: 0.2s ease-in-out;
+                margin-right: -5px;
+            }
+        }
+    }
+    &-image {
+        .left-person {
+            background: url(../assets/images/header-pic.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            box-shadow: inset 0 0 0 9px $primary-bg;
+            order: 1;
+            justify-content: center;
+            @include size(400px, 500px);
+            animation: profile__animate 8s ease-in-out infinite;
+        }
+
+        @keyframes profile__animate {
+            0% {
+                border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+            }
+            50% {
+                border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+            }
+            100% {
+                border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+            }
+        }
+    }
+}
+.explore:hover .arrow-right {
+    transform: translateX(20px);
+    transition: 0.2s ease-in-out;
+}
+
+.menu {
+    display: flex;
+    gap: 0 60px;
+    list-style-type: none;
+    margin-left: auto;
+    align-items: center;
+
+    &-link {
+        color: inherit;
+    }
+}
+
+.watch {
+    display: flex;
+    align-items: center;
+    gap: 0 12px;
+    font-size: 20px;
+    line-height: calc(36 / 24);
+    color: inherit;
+    &-icon {
+        background: url(../assets/images/Play.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: none;
+        @include size(40px);
+    }
+}
+
+.logo-text {
+    font-family: "Big Shoulders Text", sans-serif;
+    font-size: 35px;
+    line-height: 80px;
+    align-items: center;
+    font-weight: 600;
+    color: $primary-color;
+}
+
+
+.menu li {
+    display: inline-block;
+    list-style: outside none none;
+    margin: 0 1.5em;
+    padding: 0;
+  }
+  .menu a {
+    padding: 0.5em 0;
+    color: black;
+    position: relative;
+    letter-spacing: 1px;
+    text-decoration: none;
+  }
+  .menu a:before,
+  .menu a:after {
+    position: absolute;
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+  }
+  .menu a:before {
+    bottom: 0;
+    display: block;
+    border-radius: 20px;
+    height: 3px;
+    width: 0%;
+    content: "";
+    background-color: #c0392b;
+  }
+  
+  .menu a:hover:before,
+  .menu .current a:before {
+    opacity: 1;
+    width: 100%;
+  }
+  

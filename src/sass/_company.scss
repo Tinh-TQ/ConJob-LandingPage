@@ -1,0 +1,22 @@
+.company {
+    margin-bottom: 160px;
+    &-heading {
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 160%;
+        text-align: center;
+        margin: 32px 0;
+        color: $gray-darker;
+    }
+    &-logos {
+        display: flex;
+        align-items: center;
+        gap: 0 75px;
+        max-width: 1370px;
+        padding: 0 15px;
+        margin: 0 auto;
+    }
+    &-logo img {
+        margin: 0 auto;
+    }
+}
